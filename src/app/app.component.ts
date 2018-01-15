@@ -15,32 +15,29 @@ export class AppComponent implements OnDestroy {
   subtitle = 'Nuvention Team F'
   ghId = '';
   ghIds: GitIdInfo[] = [];
-  repo: Repository;
-  results: string[];
+  repo: string[] = [];
   private getGitsub: Subscription;
-  private getRepo: Subscription;
+  private getReposub: Subscription;
   errorMessage = null;
   constructor(public ids: GitIdInfoService) { }
 
-  displayRepo() {
-    this.errorMessage = null;
-    this.getRepo = this.ids.GetRepo().subscribe( info => this.repo,
-      error => {
-        console.log('error:', error);
-        this.errorMessage = error.message;
-      });
-      this.ghId = '';
-      console.log()
-  }
 
-  displayRepoSimple() {
-    this.ids.GetRepo().subscribe(data => {
-      this.results = data['name'];
-      console.log(this.results);
+  getRepo() {
+    this.getReposub = this.ids.GetRepo().subscribe(data => {
+      this.repo.push(data['name'])
+      this.repo.push(data['description'])
+      console.log(this.repo);
     })
   }
 
 
+  displayRepoName() {
+    return this.repo[0];
+  }
+
+  displayRepoDescription() {
+    return this.repo[1];
+  }
 
   addGhId(toadd: string) {
     this.errorMessage = null;
@@ -56,7 +53,7 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy() {
     this.getGitsub.unsubscribe();
-    this.getRepo.unsubscribe();
+    this.getReposub.unsubscribe();
   }
 }
 

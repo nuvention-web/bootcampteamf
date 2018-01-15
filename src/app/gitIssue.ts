@@ -1,5 +1,5 @@
 export interface Issue {
-    // number?:   Eventually we'll need this
+    number?: number;
     title?: string;
     body?: string;
 }

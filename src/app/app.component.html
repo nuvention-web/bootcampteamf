@@ -1,17 +1,20 @@
-<section class="mat-typography">
+<section class="mat-typography" onload="getRepo();">
     <div> 
     <div style="text-align:center">
       <h1>
         {{ title }}
       </h1>
-      <h2 onload="displayRepo()">
-        Currently viewing repository:
+      <h2>
+        Currently viewing repository: {{ displayRepoName() }}
       </h2>
+      <h3>
+        {{ displayRepoDescription() }}
+      </h3>
     <div>
-      <mat-form-field>
+      <!-- <mat-form-field>
         <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id"  value="toddwseattle" >
-      </mat-form-field>
-      <button mat-raised-button (click)="displayRepoSimple()">Test Fetching Repo</button>
+      </mat-form-field> -->
+      <button mat-raised-button (click)="getRepo()">Test Fetching Repo</button>
     </div>
     <ul>
       <li *ngFor="let i of ghIds"  style="text-align:left">{{i.login}}</li>
