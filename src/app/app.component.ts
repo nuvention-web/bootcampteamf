@@ -11,8 +11,8 @@ import { Repository } from './repo';
 })
 
 export class AppComponent implements OnDestroy {
-  title = 'Status Report';
-  subtitle = 'Nuvention Team F'
+  title = 'Nuvention Team F';
+  subtitle = 'Status Report'
   ghId = '';
   ghIds: GitIdInfo[] = [];
   repo: string[] = [];
@@ -49,6 +49,11 @@ export class AppComponent implements OnDestroy {
         this.errorMessage = error.message;
       });
       this.ghId = '';
+  }
+
+  //Fetches repository name and description when page loads
+  ngOnInit() {
+    this.getRepo();
   }
 
   ngOnDestroy() {

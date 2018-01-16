@@ -2,3 +2,34 @@
     background-color: red;
     color: yellow;
 }
+
+h1 {
+    font-size: 300%;
+    font-weight: bold;
+    color: #1148a0;
+}
+
+.repo_description {
+    color: grey;
+}
+
+.summary {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.summary_input {
+    width: 80%;
+}
+
+.summary_box {
+    border: 2px solid #1148a0;
+}
+
+.summary_title {
+    margin-top: 100px; 
+    text-align: left;
+    font-size: 200%;
+    font-weight: bold;
+    color: #1148a0;
+}

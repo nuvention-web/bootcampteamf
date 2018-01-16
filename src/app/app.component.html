@@ -1,21 +1,28 @@
-<section class="mat-typography" onload="getRepo();">
+<section class="mat-typography">
     <div> 
     <div style="text-align:center">
       <h1>
         {{ title }}
       </h1>
-      <h2>
+      <h2 style="margin-top:50px;">
         Currently viewing repository: <span style="color: lightgreen"> {{ displayRepoName() }} </span>
       </h2>
-      <h3>
+      <h3 class="repo_description">
         {{ displayRepoDescription() }}
       </h3>
     <div>
-      <!-- <mat-form-field>
-        <input matInput [(ngModel)]="ghId" placeholder="Enter a github org or user id"  value="toddwseattle" >
-      </mat-form-field> -->
-      <button mat-raised-button (click)="getRepo()">Test Fetching Repo</button>
+      <button style="margin-top:10px;" mat-raised-button (click)="getRepo()">Test Fetching Repo</button>
     </div>
+
+<div class="summary">
+    <p class="summary_title">Summary</p>
+  <div class="summary_box">
+    <mat-form-field class="summary_input">
+      <textarea matInput placeholder="Write a story summary here.  Eventually these Summary updates will save to a db." matTextareaAutosize matAutosizeMinRows="2"
+                matAutosizeMaxRows="10"></textarea>
+    </mat-form-field>
+  </div>
+</div>
     <ul>
       <li *ngFor="let i of ghIds"  style="text-align:left">{{i.login}}</li>
       <app-id-list [idlist]="ghIds"></app-id-list>
