@@ -3,10 +3,39 @@
     color: yellow;
 }
 
+body {
+    margin: 0 auto;
+}
+
 h1 {
     font-size: 300%;
     font-weight: bold;
-    color: #1148a0;
+    color: white;
+}
+
+hr {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.fetch_button {
+    background-color: #00BFA5;
+    color: white;
+}
+
+.title_background {
+    background-image: url("/assets/images/kellogg_building_01_1800x1158.jpg");
+    width: 100%;
+    background-position-y: -400px;
+}
+
+.title_box {
+    background-color: rgba(3, 3, 3, 0.3);
+    width: 70%;
+    padding: 15px;
+    margin: 0 auto;
 }
 
 .repo_description {
@@ -14,7 +43,7 @@ h1 {
 }
 
 .summary {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -27,7 +56,7 @@ h1 {
 }
 
 .summary_title {
-    margin-top: 100px; 
+    margin-top: 20px; 
     text-align: left;
     font-size: 200%;
     font-weight: bold;

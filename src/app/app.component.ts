@@ -3,6 +3,7 @@ import { GitIdInfoService } from './git-id-info.service';
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Repository } from './repo';
+import { Issue } from './gitIssue'
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class AppComponent implements OnDestroy {
   subtitle = 'Status Report'
   ghId = '';
   ghIds: GitIdInfo[] = [];
+  issues: Issue[] = [];
   repo: string[] = [];
   private getGitsub: Subscription;
   private getReposub: Subscription;
@@ -49,6 +51,10 @@ export class AppComponent implements OnDestroy {
         this.errorMessage = error.message;
       });
       this.ghId = '';
+  }
+
+  getIssues() {
+    
   }
 
   //Fetches repository name and description when page loads

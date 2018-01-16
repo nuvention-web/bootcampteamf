@@ -1,18 +1,25 @@
 <section class="mat-typography">
     <div> 
     <div style="text-align:center">
+        <div class="title_background">
+            <p style="height: 20px;"></p>
+      <div class="title_box">
       <h1>
         {{ title }}
       </h1>
-      <h2 style="margin-top:50px;">
+      <hr>
+      <h2 style="color: white;">
         Currently viewing repository: <span style="color: lightgreen"> {{ displayRepoName() }} </span>
       </h2>
       <h3 class="repo_description">
         {{ displayRepoDescription() }}
       </h3>
     <div>
-      <button style="margin-top:10px;" mat-raised-button (click)="getRepo()">Test Fetching Repo</button>
+      <button class="fetch_button" style="margin-top:10px;" mat-raised-button (click)="getRepo()">Test Fetching Repo</button>
     </div>
+  </div>
+  <p style="height: 20px;"></p>
+</div>
 
 <div class="summary">
     <p class="summary_title">Summary</p>
