@@ -4,6 +4,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Repository } from './repo';
 import { Issue } from './gitIssue'
+import { IssueInfoService } from './issue-info.service'
 
 @Component({
   selector: 'app-root',
@@ -20,8 +21,11 @@ export class AppComponent implements OnDestroy {
   repo: string[] = [];
   private getGitsub: Subscription;
   private getReposub: Subscription;
+  private getIssuessub: Subscription;
   errorMessage = null;
-  constructor(public ids: GitIdInfoService) { }
+
+
+  constructor(public ids: GitIdInfoService, public issue_info: IssueInfoService) { }
 
 
   getRepo() {
@@ -41,10 +45,11 @@ export class AppComponent implements OnDestroy {
     return this.repo[1];
   }
 
-  addGhId(toadd: string) {
+  addGhId() {
     this.errorMessage = null;
-    this.getGitsub = this.ids.GetGitIdInfo(toadd).subscribe( info => {
+    this.getGitsub = this.ids.GetGitIdInfo().subscribe( info => {
       this.ghIds.push(info as GitIdInfo);
+      console.log(this.ghIds)
       },
       error => {
         console.log('error:', error);
@@ -54,12 +59,18 @@ export class AppComponent implements OnDestroy {
   }
 
   getIssues() {
-    
+    this.getIssuessub = this.issue_info.GetIssue().subscribe( info => {
+      info.forEach(element => {
+        this.issues.push(element as Issue);
+      });
+      console.log(this.issues);
+    })
   }
 
   //Fetches repository name and description when page loads
   ngOnInit() {
     this.getRepo();
+    this.getIssues();
   }
 
   ngOnDestroy() {

@@ -43,7 +43,7 @@ hr {
 }
 
 .summary {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -52,7 +52,7 @@ hr {
 }
 
 .summary_box {
-    border: 2px solid #1148a0;
+    border: .5px solid #dbdbdb;
 }
 
 .summary_title {
@@ -60,5 +60,32 @@ hr {
     text-align: left;
     font-size: 200%;
     font-weight: bold;
-    color: #1148a0;
+    color: #00BFA5;
+}
+
+.issues  {
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: left;
+    width: 80%;
+    padding: none;
+}
+
+.issues p {
+    color: #00BFA5;
+    font-size: 200%;
+    padding: none;
+    font-weight: bold;
+}
+
+.issue_list {
+    border: .5px solid #dbdbdb; 
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+
+.issue_title {
+    font-size: 150%;
+    margin-top: 12.5px;
+    font-weight: bold;
 }

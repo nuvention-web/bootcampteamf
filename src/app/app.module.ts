@@ -1,6 +1,7 @@
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GitIdInfoService } from './git-id-info.service';
+import { IssueInfoService } from './issue-info.service'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,7 +25,7 @@ import { MatInputModule, MatButtonModule, MatIconModule, MatListModule } from '@
     MatIconModule,
     MatListModule,
   ],
-  providers: [GitIdInfoService],
+  providers: [GitIdInfoService, IssueInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

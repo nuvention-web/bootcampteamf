@@ -9,13 +9,13 @@
       </h1>
       <hr>
       <h2 style="color: white;">
-        Currently viewing repository: <span style="color: lightgreen"> {{ displayRepoName() }} </span>
+        Currently viewing repository: <span style="color: #00BFA5"> {{ displayRepoName() }} </span>
       </h2>
       <h3 class="repo_description">
         {{ displayRepoDescription() }}
       </h3>
     <div>
-      <button class="fetch_button" style="margin-top:10px;" mat-raised-button (click)="getRepo()">Test Fetching Repo</button>
+      <button class="fetch_button" style="margin-top:10px;" mat-raised-button (click)="getIssues()">Test Fetching Repo</button>
     </div>
   </div>
   <p style="height: 20px;"></p>
@@ -30,10 +30,17 @@
     </mat-form-field>
   </div>
 </div>
-    <ul>
-      <li *ngFor="let i of ghIds"  style="text-align:left">{{i.login}}</li>
-      <app-id-list [idlist]="ghIds"></app-id-list>
-    </ul>
+<div class="issues">
+    <p>Recent Issues</p>
+    <div class="issue_list">
+      <mat-list-item *ngFor="let issue of issues">
+        <div class="issue_title">{{issue.title}}</div>
+        <span style="color:grey">Status:</span> <span style="color:chartreuse; padding-bottom: 10px;" *ngIf="issue.state == 'open'">{{issue.state}}</span><span style="color:crimson; padding-bottom: 10px;" *ngIf="issue.state == 'closed'">{{issue.state}}</span>
+        <br> 
+        {{issue.body}}
+      </mat-list-item>
+    </div>
+</div>
     </div>
   </div>
   <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
