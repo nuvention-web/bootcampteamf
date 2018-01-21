@@ -58,12 +58,23 @@ export class AppComponent implements OnDestroy {
       this.ghId = '';
   }
 
+
+  formatDate(date : string ) {
+    var split_date = date.split(new RegExp('[-T]'), 3);
+    console.log(split_date);
+    return split_date;
+  }
+
+
   getIssues() {
     this.getIssuessub = this.issue_info.GetIssue().subscribe( info => {
       info.forEach(element => {
         this.issues.push(element as Issue);
+        var created = this.formatDate(element.created_at);
+        var updated = this.formatDate(element.updated_at);
+        element.created_at = `${created[1]} / ${created[2]} / ${created[0]}`
+        element.updated_at = `${updated[1]} / ${updated[2]} / ${updated[0]}`
       });
-      console.log(this.issues);
     })
   }
 
