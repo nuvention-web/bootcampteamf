@@ -26,9 +26,11 @@ hr {
 }
 
 .title_background {
-    background-image: url("/assets/images/kellogg_building_01_1800x1158.jpg");
-    width: 100%;
-    background-position-y: -400px;
+    background-image: url("/assets/images/chicago.jpeg");
+    background-size: cover;
+    /* background-position-y: -600px; */
+    background-repeat:   no-repeat;
+    background-position: center center; 
 }
 
 .title_box {
