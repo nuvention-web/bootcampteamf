@@ -24,10 +24,17 @@
 <div class="summary">
     <p class="summary_title">Summary</p>
   <div class="summary_box">
-    <mat-form-field class="summary_input">
-      <textarea matInput placeholder="Write a story summary here.  Eventually these Summary updates will save to a db." matTextareaAutosize matAutosizeMinRows="2"
-                matAutosizeMaxRows="10" [(ngModel)]="summary"></textarea>
-    </mat-form-field>
+
+    <div class="summary_edit">
+    <div  [froalaEditor]='options' [(froalaModel)]="editorContent"></div>
+    </div>
+
+  <div style="text-align:center">
+    <button class="summary_button" mat-raised-button (click)="getIssuesByDate()">Add to Summaries With Current Date</button>
+  </div>
+
+  <div style="margin-top: 50px; color:gray; text-align:center">Summaries added to the database would go here.  This is just a placeholder.</div>
+
   </div>
 </div>
 

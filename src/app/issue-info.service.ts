@@ -13,7 +13,6 @@ export class IssueInfoService {
   constructor(private http: HttpClient) { }
 
   GetIssue(daterange?: string) {
-    console.log(daterange)
     let issueAPI: string;
     if (daterange == undefined) {
       issueAPI = githubAPI + `repos/nuvention-web/bootcampteamf/issues?state=all`;

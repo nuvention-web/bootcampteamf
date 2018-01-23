@@ -12,6 +12,7 @@ import { IssueInfoService } from './issue-info.service'
   styleUrls: ['./app.component.css']
 })
 
+
 export class AppComponent implements OnDestroy {
   title = 'Nuvention Team F';
   subtitle = 'Status Report';
@@ -25,9 +26,15 @@ export class AppComponent implements OnDestroy {
   private getReposub: Subscription;
   private getIssuessub: Subscription;
   errorMessage = null;
+  public options: Object = {
+    placeholderText: 'Write a summary of your project updates here!',
+    charCounterCount: false,
+  }
+  public editorContent: string = ''
 
 
   constructor(public ids: GitIdInfoService, public issue_info: IssueInfoService) { }
+
 
 
   getRepo() {

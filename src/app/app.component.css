@@ -45,15 +45,36 @@ hr {
 .summary {
     width: 80%;
     margin: 0 auto;
+    text-align: left;
+}
+
+.fr-toolbar {
+    color: #00BFA5;
 }
 
 .summary_input {
     width: 80%;
 }
 
+.summary_edit {
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 15px; 
+    margin-bottom: 15px;
+}
+
 .summary_box {
     border: .5px solid #dbdbdb;
     margin-bottom: 50px;
+    padding-bottom: 15px;
+    align-items: center;
+}
+
+.summary_button {
+    margin: 0 auto;
+    background-color: #00BFA5;
+    color: white;
 }
 
 .summary_title {

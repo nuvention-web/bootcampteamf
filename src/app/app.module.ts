@@ -7,8 +7,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { IdListComponent } from './id-list/id-list.component';
-
 import { MatInputModule, MatButtonModule, MatIconModule, MatListModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 @NgModule({
   declarations: [
@@ -26,6 +26,8 @@ import { MatInputModule, MatButtonModule, MatIconModule, MatListModule, MatDatep
     MatListModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    FroalaEditorModule.forRoot(), 
+    FroalaViewModule.forRoot()
   ],
   providers: [GitIdInfoService, IssueInfoService],
   bootstrap: [AppComponent]
