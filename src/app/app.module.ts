@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { IdListComponent } from './id-list/id-list.component';
 
-import { MatInputModule, MatButtonModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatInputModule, MatButtonModule, MatIconModule, MatListModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,8 @@ import { MatInputModule, MatButtonModule, MatIconModule, MatListModule } from '@
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [GitIdInfoService, IssueInfoService],
   bootstrap: [AppComponent]

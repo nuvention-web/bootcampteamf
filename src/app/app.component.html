@@ -26,12 +26,21 @@
   <div class="summary_box">
     <mat-form-field class="summary_input">
       <textarea matInput placeholder="Write a story summary here.  Eventually these Summary updates will save to a db." matTextareaAutosize matAutosizeMinRows="2"
-                matAutosizeMaxRows="10"></textarea>
+                matAutosizeMaxRows="10" [(ngModel)]="summary"></textarea>
     </mat-form-field>
   </div>
 </div>
+
+{{summary}}
+
 <div class="issues">
-    <p>Recent Issues</p>
+    <p>Issues</p> 
+    <mat-form-field class="issues_input">
+      <input id="date_input" matInput [matDatepicker]="picker" [(ngModel)]="issue_date" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button class="issues_button" style="margin-top:10px;" mat-raised-button (click)="getIssuesByDate()">Filter By Date Updated</button>
     <div class="issue_list">
       <mat-list-item *ngFor="let issue of issues">
         <div class="issue_title">{{issue.title}}</div>

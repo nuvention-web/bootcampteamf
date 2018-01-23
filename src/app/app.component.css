@@ -53,6 +53,7 @@ hr {
 
 .summary_box {
     border: .5px solid #dbdbdb;
+    margin-bottom: 50px;
 }
 
 .summary_title {
@@ -74,8 +75,9 @@ hr {
 .issues p {
     color: #00BFA5;
     font-size: 200%;
-    padding: none;
     font-weight: bold;
+    margin: 0;
+    margin-top: 25px;
 }
 
 .issue_list {
@@ -102,4 +104,15 @@ hr {
 .issue_dates {
     padding-right: 30px;
     color: #00BFA5;
+}
+
+.issues_input {
+    width: 20%;
+}
+
+.issues_button {
+    vertical-align: top;
+    margin-left: 15px;
+    background-color: #00BFA5;
+    color: white;
 }

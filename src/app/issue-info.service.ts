@@ -12,14 +12,16 @@ export class IssueInfoService {
 
   constructor(private http: HttpClient) { }
 
-  GetIssue() {
-    
+  GetIssue(daterange?: string) {
+    console.log(daterange)
+    let issueAPI: string;
+    if (daterange == undefined) {
+      issueAPI = githubAPI + `repos/nuvention-web/bootcampteamf/issues?state=all`;
+    }
+    else {
+      issueAPI = githubAPI + `repos/nuvention-web/bootcampteamf/issues?state=all&since=${daterange}`;
+    }
 
-    // for (let i = 0; i < array.length; i++) {
-    //   const element = array[i];
-      
-    // }
-    const issueAPI = githubAPI + `repos/nuvention-web/bootcampteamf/issues\?state\=all`;
     return(this.http.get<Issue[]>(issueAPI));
   }
 }
