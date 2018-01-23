@@ -30,7 +30,26 @@ export class AppComponent implements OnDestroy {
     placeholderText: 'Write a summary of your project updates here!',
     charCounterCount: false,
   }
-  public editorContent: string = ''
+  public editorContent: string = `      <p>Status Update 1/23/2018 - NUvention Team F</p>
+
+  <ul>
+    <li>Progress:
+  
+      <ul>
+        <li>Team Worked updating the Summary section of the Github Puller Project</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</li>
+        <li>sed do eiusmod tempor incididunt ut labore et</li>
+      </ul>
+    </li>
+    <li>Future Updates:
+  
+      <ul>
+        <li>olore magna aliqua. Ut enim ad minim ven</li>
+        <li>iam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&nbsp;</li>
+        <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </li>
+      </ul>
+    </li>
+  </ul>`;
 
 
   constructor(public ids: GitIdInfoService, public issue_info: IssueInfoService) { }
